@@ -18,12 +18,4 @@ To get started with the CI/CD actions, follow these steps:
     ```
     ./hello_world.sh
     ```
-
-
-## Workflows
-
-The following workflows are included in this repository:
-
-- **Build and Test**: This workflow builds the project and runs tests.
-- **Deploy**: This workflow deploys the project to the specified environment.
-
+4. When you push to your own github repository, Github will trigger the workflow. You can make changes to scripts as you seem fit.

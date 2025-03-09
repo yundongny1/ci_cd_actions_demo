@@ -1,13 +1,7 @@
 name: CI/CD Pipeline
-name: Python application
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
 
 # Runs the pipeline on the latest version of Ubuntu on GitHub Actions
 jobs:
