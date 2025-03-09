@@ -31,6 +31,6 @@ jobs:
 # We could also simply print the python version and the library versions here through a simple python --version command.
     - name: Trigger bash script 
       run: |
-        ./bash_first_trigger.sh
+        ./first_trigger.sh
         echo "Bash script triggered the python script on $(date)"
         
