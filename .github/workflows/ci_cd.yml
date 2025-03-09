@@ -1,0 +1,42 @@
+name: CI/CD Pipeline
+name: Python application
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Runs the pipeline on the latest version of Ubuntu on GitHub Actions
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+# Set up Python
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+# Install dependencies
+# Install pip then install dependencies required for the project from the requirements.txt file
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        echo "Pip and python dependencies installed"
+
+# We will run a bash script to trigger the python script that prints out the library versions.
+# This is just to demonstrate how we can trigger different scripts/jobs in the pipeline.
+# We could also simply print the python version and the library versions here through a simple python --version command.
+    - name: Trigger bash script 
+      run: |
+        ./bash_first_trigger.sh
+        echo "Bash script triggered the python script on $(date)"
+        
